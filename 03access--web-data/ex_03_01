@@ -1,0 +1,15 @@
+import re
+
+hand = open('regex_sum_2301436.txt')
+total = 0
+
+for line in hand:
+    line = line.strip()
+    numbers = re.findall('[0-9]+', line)
+    total += sum([int(num) for num in numbers])
+
+print('Sum:', total)
+
+#compact_Version
+#import re
+#print(sum([int(x) for x in re.findall('[0-9]+', open('regex_sum_2301436.txt').read())]))
